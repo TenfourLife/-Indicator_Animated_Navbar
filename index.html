@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="custom-navbar">
+        <ul>
+            <li class="active">
+                <a href="#">
+                    <i class='bx bx-home custom-icon'></i>
+                    <i class='bx bxs-home custom-activeIcon'></i>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-user custom-icon'></i>
+                    <i class='bx bxs-user custom-activeIcon'></i>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-heart custom-icon'></i>
+                    <i class='bx bxs-heart custom-activeIcon'></i>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-folder custom-icon'></i>
+                    <i class='bx bxs-folder custom-activeIcon'></i>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-cog custom-icon'></i>
+                    <i class='bx bxs-cog custom-activeIcon'></i>
+                </a>
+            </li>
+            <div class="custom-indicator"></div>
+        </ul>
+    </div>
+
+    <script>
+        // Select the navbar and all list items
+        const customNavBar = document.querySelector(".custom-navbar"),
+              allCustomLi = document.querySelectorAll("li");
+
+        // Add click event listener to each list item
+        allCustomLi.forEach((customLi, customIndex) => {
+            customLi.addEventListener("click", event => {
+                event.preventDefault(); // Prevent the default anchor behavior
+
+                // Remove the active class from the currently active item
+                customNavBar.querySelector(".active").classList.remove("active");
+
+                // Add the active class to the clicked item
+                customLi.classList.add("active");
+
+                // Move the indicator to the clicked item
+                const customIndicator = document.querySelector(".custom-indicator");
+                customIndicator.style.transform = `translateX(calc(${customIndex * 90}px))`;
+            });
+        });
+    </script>
+</body>
+</html>

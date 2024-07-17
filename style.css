@@ -1,0 +1,112 @@
+/* Resetting margin, padding and setting box-sizing and font-family */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Styling for the body to center the navbar */
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #2a7de8; /* Changed background color */
+}
+
+/* Styling for the navbar container */
+.custom-navbar {
+  position: relative;
+  height: 120px;
+  width: 500px;
+  background: #fff;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling for the navbar list */
+.custom-navbar ul {
+  position: relative;
+  display: flex;
+}
+
+/* Styling for each list item */
+.custom-navbar ul li {
+  position: relative;
+  list-style-type: none;
+}
+
+/* Styling for each link inside list items */
+.custom-navbar ul li a {
+  position: relative;
+  height: 120px;
+  width: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+/* Styling for icons inside the links */
+.custom-navbar ul li a i {
+  position: absolute;
+  font-size: 38px;
+  color: #2a7de8; /* Changed icon color */
+}
+
+/* Styling for inactive icons */
+ul li a i.custom-activeIcon {
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.6s ease;
+  transition-delay: 0.2s;
+}
+
+/* Styling for active icons */
+.custom-navbar ul li.active a i {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Styling for the indicator */
+.custom-navbar ul .custom-indicator {
+  position: absolute;
+  bottom: -19px;
+  left: 34px;
+  height: 36px;
+  width: 25px;
+  background: #2a7de8; /* Changed indicator color */
+  border-radius: 50%;
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Styling for the left part of the indicator */
+ul .custom-indicator::before {
+  content: "";
+  position: absolute;
+  left: -15px;
+  bottom: 50%;
+  height: 22px;
+  width: 20px;
+  background: #fff;
+  border-bottom-right-radius: 20px;
+  box-shadow: 0 10px 0 #2a7de8; /* Changed shadow color */
+}
+
+/* Styling for the right part of the indicator */
+ul .custom-indicator::after {
+  content: "";
+  position: absolute;
+  right: -15px;
+  bottom: 50%;
+  height: 22px;
+  width: 20px;
+  background: #fff;
+  border-bottom-left-radius: 20px;
+  box-shadow: 0 10px 0 #2a7de8; /* Changed shadow color */
+}
